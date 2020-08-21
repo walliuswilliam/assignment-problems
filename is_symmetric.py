@@ -5,5 +5,10 @@ def is_symmetric(input_string):
     symmetry_check = False
   return symmetry_check
 
-print(is_symmetric("racecar"))
-print(is_symmetric("batman"))
+print("testing symmetry on 'racecar'")
+assert is_symmetric("racecar") is True, 'is_symmetric("racecar") is False'
+print("Racecar has PASSED")
+
+print("testing symmetry on 'batman'")
+assert is_symmetric("batman") is False, 'is_symmetric("batman") is True'
+print("Batman has PASSED")
