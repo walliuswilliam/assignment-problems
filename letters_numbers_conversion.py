@@ -11,7 +11,8 @@ print('converting "batman" to numbers...')
 assert convert_to_numbers('batman') == [2, 1, 20, 13, 1, 14], "test failed"
 print('PASSED')
 
-def convert_to_letters(input_string):
+
+def convert_to_letters(input_list):
   a_string = ""
   for int in input_string:
     if int != 0:
