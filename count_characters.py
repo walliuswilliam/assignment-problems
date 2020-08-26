@@ -10,5 +10,6 @@ def count_characters(input_string):
   return dict
 
 print("counting characters in 'A cat!!!'")
-assert count_characters("A cat!!!") == {'a': 2, 'c': 1, 't': 1, ' ': 1, '!': 3}, "counting failed"
+assert count_characters("A cat!!!") == {
+  'a': 2, 'c': 1, 't': 1, ' ': 1, '!': 3}, "counting failed"
 print('passed')
