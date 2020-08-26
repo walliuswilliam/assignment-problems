@@ -14,7 +14,7 @@ print('PASSED')
 
 def convert_to_letters(input_list):
   a_string = ""
-  for int in input_string:
+  for int in input_list:
     if int != 0:
       a_string += chr(int + 96)
     if int == 0:
