@@ -25,6 +25,7 @@ class DoublyLinkedList:
     node_index += 1
     last_node.next = Node(num)
     last_node.next.index = node_index
+    last_node.next.prev = last_node
 
   def length(self):
     node_head = self.head
@@ -75,87 +76,18 @@ class DoublyLinkedList:
       node = node.next
 
 
-print('checking class Node...')
-A = Node(4)
-assert A.data == 4
-assert A.next == None
-B = Node(8)
-A.next = B
-assert A.next.data == 8
-print('passed')
-
-print('checking class Linked List...')
-linked_list = LinkedList(4)
-assert linked_list.head.data == 4
-linked_list.append(8)
-assert linked_list.head.next.data == 8
-linked_list.append(9)
-print('printing list data:')
-linked_list.print_data()
-assert linked_list.length() == 3
-print('passed')
+doubly_linked_list = DoublyLinkedList('a')
+doubly_linked_list.append('c')
+doubly_linked_list.append('d')
+doubly_linked_list.append('e')
+doubly_linked_list.insert('b',1)
+doubly_linked_list.delete(3)
 
 
-linked_list = LinkedList('b')
-linked_list.append('e')
-linked_list.append('f')
-linked_list.push('a')
 
-print("checking method 'length'...")
-assert linked_list.length() == 4
-print('passed')
-
-print("checking attribute 'index'...")
-assert linked_list.head.index == 0
-print('passed')
-assert linked_list.head.next.index == 1
-print('passed')
-assert linked_list.head.next.next.index == 2
-print('passed')
-assert linked_list.head.next.next.next.index == 3
-print('passed')
-
-print("checking method 'get node'...")
-assert linked_list.get_node(0).data == 'a', linked_list.get_node(0).data
-print('passed')
-assert linked_list.get_node(1).data == 'b', linked_list.get_node(1).data
-print('passed')
-assert linked_list.get_node(2).data == 'e'
-print('passed')
-assert linked_list.get_node(3).data == 'f'
-print('passed')
-
-print('')
-print('')
-linked_list = LinkedList('a')
-linked_list.append('b')
-linked_list.append('c')
-linked_list.append('d')
-linked_list.append('e')
-print("checking method 'length'...")
-assert linked_list.length() == 5
-print('passed')
-
-linked_list.print_data()
-
-print("checking method 'get node'...")
-assert linked_list.get_node(2).data == 'c'
-print('passed')
-linked_list.delete(2)
-
-print("checking method 'length'...")
-assert linked_list.length() == 4
-print('passed')
-
-print("checking method 'get node'...")
-linked_list.get_node(2).data == 'd'
-print('passed')
-
-linked_list.print_data()
-
-print("checking method 'insert'...")
-linked_list.insert('f', 2)
-assert linked_list.length() == 5, linked_list.length
-assert linked_list.get_node(2).data == 'f'
-linked_list.print_data()
-print('passed')
+current_node = doubly_linked_list.get_node(3)
+node_values = [current_node.data]
+for _ in range(3):
+  current_node = current_node.prev
+  node_values.append(current_node.data)
+assert node_values == ['e', 'c', 'b', 'a'], node_values
