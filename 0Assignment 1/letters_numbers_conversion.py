@@ -1,11 +1,11 @@
 def convert_to_numbers(input_string):
-  an_array = []
+  array = []
   for char in input_string:
     if char != ' ':
-      an_array.append(ord(char) - 96)
+      array.append(ord(char) - 96)
     if char == ' ':
-      an_array.append(0)
-  return an_array
+      array.append(0)
+  return array
 
 print('converting "batman" to numbers...')
 assert convert_to_numbers('batman') == [2, 1, 20, 13, 1, 14], "test failed"
@@ -14,10 +14,10 @@ print('PASSED')
 
 def convert_to_letters(input_list):
   a_string = ""
-  for int in input_list:
-    if int != 0:
-      a_string += chr(int + 96)
-    if int == 0:
+  for int_ in input_list:
+    if int_ != 0:
+      a_string += chr(int_ + 96)
+    if int_ == 0:
       a_string += (" ")
   return a_string
 

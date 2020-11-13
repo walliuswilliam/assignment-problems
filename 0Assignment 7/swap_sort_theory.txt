@@ -1,0 +1,31 @@
+A) The least amount of swaps needed would be no, or 0 swaps. This is becuase the input list would be in order already, which would result in the function not changing anything on the list. This applies to all number of elements n, as well.  
+
+B) The greatest number of swaps possible would be 10. This is becuase if the list is completely out of order (all values need to be swapped), as the greatest values are pushed to the back, but you wouln't swap once the greatest value reaches the back, so you would start with fours swaps, then the amount of swaps would decrease by 1 everytime, while you add them all together. For an n amount of elements, you would add numbers starting at n, then decreasing by one, or use the formula ((n-1)**2+(n-1)/2.
+
+C) True, as the maximum amount of swaps can only be as many as the last, but never more.
+
+D) False, as you can have the same amount of swaps as the last pass, but never more. A more accurate statement would be `On two consecutive passes, the number of swaps performed by swap sort can be equal or less, but never greater`. An example of this is in our past assignment, the code did the same amount of swaps in two consecutive passes:
+
+FIRST PASS
+[(5,8),2,2,4,3,0,2,-5,3.14,2]
+[5,(8,2),2,4,3,0,2,-5,3.14,2] SWAP
+[5,2,(8,2),4,3,0,2,-5,3.14,2] SWAP
+[5,2,2,(8,4),3,0,2,-5,3.14,2] SWAP
+[5,2,2,4,(8,3),0,2,-5,3.14,2] SWAP
+[5,2,2,4,3,(8,0),2,-5,3.14,2] SWAP
+[5,2,2,4,3,0,(8,2),-5,3.14,2] SWAP
+[5,2,2,4,3,0,2,(8,-5),3.14,2] SWAP
+[5,2,2,4,3,0,2,-5,(8,3.14),2] SWAP
+[5,2,2,4,3,0,2,-5,3.14,(8,2)] SWAP
+
+SECOND PASS
+[(5,2),2,4,3,0,2,-5,3.14,2,8] SWAP
+[2,(5,2),4,3,0,2,-5,3.14,2,8] SWAP
+[2,2,(5,4),3,0,2,-5,3.14,2,8] SWAP
+[2,2,4,(5,3),0,2,-5,3.14,2,8] SWAP
+[2,2,4,3,(5,0),2,-5,3.14,2,8] SWAP
+[2,2,4,3,0,(5,2),-5,3.14,2,8] SWAP
+[2,2,4,3,0,2,(5,-5),3.14,2,8] SWAP
+[2,2,4,3,0,2,-5,(5,3.14),2,8] SWAP
+[2,2,4,3,0,2,-5,3.14,(5,2),8] SWAP
+[2,2,4,3,0,2,-5,3.14,2,(5,8)]
