@@ -60,6 +60,7 @@ class DoublyLinkedList:
     next_node = self.get_node(index+1)
     node = prev_node
     prev_node.next = next_node
+    next_node.prev = prev_node
     while node.next != None:
       node.index -= 1
       node = node.next
@@ -69,8 +70,10 @@ class DoublyLinkedList:
     prev_node = self.get_node(index-1)
     curr_node = self.get_node(index)
     node = prev_node
+    curr_node.prev = new_node
     prev_node.next = new_node
     new_node.next = curr_node
+    new_node.prev = prev_node
     while node.next != None:
       node.index += 1
       node = node.next
@@ -84,10 +87,11 @@ doubly_linked_list.insert('b',1)
 doubly_linked_list.delete(3)
 
 
-
+print('testing doubly linked list...')
 current_node = doubly_linked_list.get_node(3)
 node_values = [current_node.data]
 for _ in range(3):
   current_node = current_node.prev
   node_values.append(current_node.data)
 assert node_values == ['e', 'c', 'b', 'a'], node_values
+print('passed')
