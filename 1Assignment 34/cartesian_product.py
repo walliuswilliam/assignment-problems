@@ -5,7 +5,7 @@ def cartesian_product(arrays):
     for point in range(len(points)):
       first_point = points[point]
       for var in range(len(an_array)):
-        new_list.append(first_point)
+        new_list.append(first_point + [an_array[var]])
     points = list(new_list)
   return points
 
