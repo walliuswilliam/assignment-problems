@@ -4,6 +4,8 @@ def cartesian_product(arrays):
     new_list = []
     for point in range(len(points)):
       first_point = points[point]
+      for var in range(len(an_array)):
+        new_list.append(first_point)
     points = list(new_list)
   return points
 
