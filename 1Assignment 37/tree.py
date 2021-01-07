@@ -18,6 +18,7 @@ def get_roots(input_list):
   for pair in input_list:
     if get_parents(pair[0], input_list) == []:
       output_list.append(pair[0])
+      break
   return output_list
 
 

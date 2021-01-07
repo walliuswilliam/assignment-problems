@@ -24,3 +24,4 @@ grid_lines = [x_lines, y_lines]
 print('testing grid_search...')
 assert grid_search(two_variable_function, grid_lines) == [0.75, 0.9], grid_search(two_variable_function, grid_lines) 
 print('passed')
+
