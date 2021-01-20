@@ -1,22 +1,23 @@
-string = '"alpha","beta","gamma","delta"\n1,2,3,4\n5.0,6.0,7.0,8.0'
-string_list = [x.split(',') for x in string.split('\n')]
-length_of_string = len(string)
+test_string = '"alpha","beta","gamma","delta"\n1,2,3,4\n5.0,6.0,7.0,8.0'
+nested_string_list = [strings.split(',') for strings in test_string.split('\n')]
 arr = []
 
-for string in string_list:
-  newstring = []
-  
-  if len(string) > 0:
-    for char in string:
-      if char[0]=='"' and char[-1]=='"':
-        char = char.strip('"')
+for value_list in nested_string_list:
+  new_strings_list = []
 
-      elif '.' in char:
-        char = float(char)
+  for string in value_list:
+    print(string)
+    if string[0]=='"' and string[-1]=='"':
+      string = string.strip('"')
 
-      else:
-        char = int(char)
-          newstring.append(char)
-  arr.append(newstring)
+    elif '.' in string:
+      string = float(string)
+
+    else:
+      string = int(string)
+    new_strings_list.append(string)
+  arr.append(new_strings_list)
 
 print(arr)
+
+
