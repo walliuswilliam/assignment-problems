@@ -6,4 +6,4 @@ recommendClothing degreesCelsius
     | otherwise = "You should wear a jacket"
     where degreesFahrenheit = (degreesCelsius*(9/5))+32
 
-main = print(recommendClothing 11)
+main = print(recommendClothing 5)
