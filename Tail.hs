@@ -10,6 +10,6 @@ take' _ []     = []
 take' n (x:xs) = x : take' (n-1) xs
 
 
-tail' n input_list = (reverseList (take' n (reverseList input_list)))
+tail' n = reverseList . take' n . reverseList
 
 main = print(tail' 4 [8, 3, -1, 2, -5, 7])
