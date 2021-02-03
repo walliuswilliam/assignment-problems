@@ -3,10 +3,16 @@
 
 bool isPrime(int x)
 {
-  for (int count{ 1 }; count <= x-1; ++count) {
-    if (x % count == 0) {
-      return false; }
-  return true;
+  if (x == 1 or x == 0) {
+    return false;
+  }
+  else {
+    for (int count = 2; count <= x-1; count++) {
+      if (x % count == 0) {
+        return false; }
+    }
+    return true;
+    
   }
 }
 
