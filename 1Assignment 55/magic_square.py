@@ -41,7 +41,6 @@ def is_valid(arr):
   return True
 
 def create_magic_square():
-  arr = [[None for num in range(3)] for num in range(3)]
   for num1 in range(1,10):
       arr = [[None for num in range(3)] for num in range(3)]
       arr[0][0] = num1
