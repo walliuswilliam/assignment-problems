@@ -23,3 +23,4 @@ def nth_term(n):
 print("calculating the '10th' term")
 assert nth_term(10) == 59051, "failed calculation"
 print("passed")
+
